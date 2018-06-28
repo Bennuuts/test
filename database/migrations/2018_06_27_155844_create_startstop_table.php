@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMeasuresTable extends Migration
+class CreateStartStopTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateMeasuresTable extends Migration
      */
     public function up()
     {
-        Schema::create('measures', function (Blueprint $table) {
+        Schema::create('start_stops', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('start');
             $table->timestamps();
-            $table->string('description');
-            $table->double('value');
-
-
-
         });
     }
 
@@ -29,8 +25,5 @@ class CreateMeasuresTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('measures');
-    }
+  
 }

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,12 +16,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('measures', 'MeasureController');
 
-Route::get('measures', 'MeasureController@show');
-Route::post('measures', 'MeasureController@store');
-Route::put('measures/{measure}', 'MeasureController@update');
-Route::delete('measures/{measure}', 'MeasureController@delete');
+Route::resource('startstop', 'StartStopController');
+Route::get('startstop', 'StartStopController@show');
+Route::post('startstop', 'StartStopController@start');
+
+
+//Route::resource('measures', 'MeasureController');
+//Route::get('measures', 'MeasureController@show');
+//Route::post('measures', 'MeasureController@store');
+//Route::put('measures/{measure}', 'MeasureController@update');
+//Route::delete('measures/{measure}', 'MeasureController@delete');
 
 
 

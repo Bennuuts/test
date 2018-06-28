@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class MeasureResource extends Resource
+class StartStopResource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +16,8 @@ class MeasureResource extends Resource
     {
         return [
             "id" => $this->id,
-            "value" => $this->value,
-            "description" => $this->description,
+            "start" => $this->start,
+            "created_at" => $this->created_at,
             ];
     }
 }
